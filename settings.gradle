@@ -3,4 +3,5 @@ include 'commons_101'
 include 'SDR_533_connection'
 include 'SDR_550_RedisTemplate'
 include 'SDR_570_Serializers'
+include 'SDR_580_Hash'
 
