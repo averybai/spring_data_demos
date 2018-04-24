@@ -1,0 +1,55 @@
+
+# git --help ignore
+
+
+# A gitignore file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected;
+# 上面这一行说明了，如果一个文件已经被 git 管理了，那么 .gitignore 对该文件的管理是无效的
+
+# To stop tracking a file that is currently tracked, use git rm --cached.
+# 上面问题的解决方案就是：git rm --cached file
+
+# 但是注意，使用上面的命令之后，要 commit 之后才会生效 
+
+
+#Each line in a gitignore file specifies a pattern. 
+
+#These patterns match relative to the location of the .gitignore file. 
+
+
+
+# PATTERN FORMAT
+
+
+# !  代表否定，比如之前排除了某文件或目录，现在又想包含进来，就可以加上它 －－ 不过，想重新包含，把那一行删除不就可以了吗？
+# 如果有文件 或 目录 是以 ! 开头的，想要排除它，可以用 \ 作转义
+
+
+# 一个 PATTERN 以 / 结束， git 会把它当作一个目录
+
+
+
+# 一个 PATTERN 不以 / 结束， 就算是一个普通模式吧。git 会以 .gitignore 文件为基础路径 ，如果 PATTERN 不是来自 .gitignore ，则会以仓库的根目录为基础路径 
+
+
+# 有一些情况，通配符是不会匹配路径的 : spring/*.xml  可以匹配 spring 这个文件夹下的所有 xml 文件，但不会匹配它的子目录下面的 xml 文件
+
+
+# ** 的用法：	**/xxxFile	**/xxxDir/xxxFileOrDir		xxxDir/**	xxxDir/**/xxxFileOrDir
+
+
+# 忽略 .idea
+.idea
+
+
+# 忽略 .gradle
+.gradle
+
+
+
+# 忽略 编译后的文件
+**/out/
+**/build/
+
+
+
+
