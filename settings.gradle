@@ -1,2 +1,4 @@
 rootProject.name = 'spring_data_demos'
+include 'commons_101'
+include 'SDR_533_connection'
 

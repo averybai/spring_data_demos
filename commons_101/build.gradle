@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 
 
-description = "Spring data demos"
+description = "Spring data demos - commons 101 - concepts"
 
 // 为了利用  gradle 打包 spring boot 的项目 ， spring boot 实现了一堆的 gradle 插件
 // 这些插件可以实现把项目打包成 jar war 等。
@@ -24,7 +24,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 jar {
-    baseName = 'spring_data_demos'
+    baseName = 'spring_data_demos_commons_101'
     version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -38,6 +38,11 @@ repositories {
 // 这下面可以不指定版本是通过上面 io.spring.dependency-management 那个插件实现的
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons
+    compile group: 'org.springframework.data', name: 'spring-data-commons'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
+
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
